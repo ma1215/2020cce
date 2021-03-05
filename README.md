@@ -107,7 +107,7 @@ int main()
 }
 ```
 ## week02-2
-```
+```c
 #include <stdio.h>
 int main()
 {
