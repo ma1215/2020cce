@@ -153,3 +153,16 @@ int main ()
          printf("p心理小紙條的值是:%d\n",p);
 }
 ```
+## week03-1
+```c
+#include <stdio.h>
+#include <stdio.h>
+int a[10];
+int main()
+{
+    int b[10];
+    int *p=(int*)malloc(sizeof(int)*10);
+    return 0;
+
+}
+```
