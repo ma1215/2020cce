@@ -275,3 +275,14 @@ int main()
  printf("\n");
 }
 ```
+##week04-1 struct
+```c
+#include <stdio.h>+
+struct Point {
+    float x,y;
+};
+int main ()
+{
+    struct  Point a;
+}
+```
