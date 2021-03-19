@@ -340,3 +340,6 @@ int main ()
     printf("c:%d %d\n", c.x, c.y);
 }
 ```
+## week04-5
+```c
+```
