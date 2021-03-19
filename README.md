@@ -275,7 +275,7 @@ int main()
  printf("\n");
 }
 ```
-##week04-1 struct
+## week04-1 struct
 ```c
 #include <stdio.h>+
 struct Point {
