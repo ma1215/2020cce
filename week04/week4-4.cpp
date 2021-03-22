@@ -11,7 +11,7 @@ int main ()
     }
     printf("b:%d %d\n",b.x,b.y);
     struct  DATA c;
-    printf("c=%d %d���ýX\n",c.x,c.y);
+    printf("c=%d %d¹³¶Ã½X\n",c.x,c.y);
     c=b;
     printf("c:%d %d\n",c.x,c.y);
 }
