@@ -184,7 +184,7 @@ int main ()
 	printf("\n");
 }
 ```
-## week03計程車
+## week03計程車費計算
 ```c
 #include <stdio.h>
 int main ()
