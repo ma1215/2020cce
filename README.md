@@ -358,7 +358,7 @@ int main ()
 
 }
 ```
-##week05-1
+## week05-1
 ```c
 #include <stdio.h>
 int main ()
@@ -371,4 +371,12 @@ int main ()
     printf("%s\n",line2);
 
 }
+```
+## week05-2
+
+```c
+```
+## week05-3
+
+```c
 ```
