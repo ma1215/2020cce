@@ -406,6 +406,12 @@ int main ()
 ## week05-4
 
 ```c
+#include <stdio.h>
+int main ()
+{
+    printf("請看看值是多少: %d", '\0' );
+}
+
 ```
 ## week05-5
 
