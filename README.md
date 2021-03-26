@@ -373,6 +373,59 @@ int main ()
 }
 ```
 ## week05-2
+```c
+#include <stdio.h>
+int main ()
+{
+
+    char line [10]="decline";
+    char line2[10]={'p','r','o','p','e','r','\0'};
+
+    printf("%s\n",line);
+    printf("%s\n",line2);
+    char line3[]="majority";
+    printf("%s\n",line3);
+    char line4[]={'m','a','j','r','i','t','y'};
+    printf("你看看你看看,現在印出來的line4: ==%s==\n",line4);
+}
+```
+## week05-3
+
+```c
+```
+## week05-4
+
+```c
+```
+## week05-5
+
+```c
+```
+## week05-6
+
+```c
+```
+## week05-7
+
+```c
+```
+## week05-8
+
+```c
+```
+## 
+
+```c
+```
+## 
+
+```c
+```
+## 
+
+```c
+```
+## 
 
 ```c
 ```
