@@ -489,7 +489,7 @@ int main()
     }
 }
 ```
-## week7 hardwood species
+## week08 hardwood species
 ```c
 #include <stdio.h>
 #include <string.h>
