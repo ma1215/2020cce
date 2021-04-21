@@ -1,6 +1,6 @@
 # 2020cce
 程式碼在這
-## 第一題程式碼
+## week01-1
 ```C
 #include <stdio.h>
 int main()
@@ -10,7 +10,7 @@ scanf("%d",&n);
 printf("%d=50*%d+5*%d+1*%d\n",n,n/50,(n%50)/5,(n%5)/1);
 }
 ```
-## 第二題程式碼
+## week01-2
 
 ```C
 #include <stdio.h>
@@ -25,7 +25,7 @@ if(n%i==0) ans=ans+1;
 printf("%d\n",ans);
 }
 ```
-## 第三題程式碼
+## week01-3
 ```C
 #include <stdio.h>
 int main()
@@ -39,7 +39,7 @@ if(a[i]%3==0) ans=ans+1;
 printf("%d\n",ans);
 }
 ```
-## 第四題程式碼
+## week01-4
 ```C
 #include <stdio.h>
 int main()
@@ -53,7 +53,7 @@ int main()
     else printf("F");
 }
 ```
-## 第五題程式碼
+## week01-5
 ```C
 #include <stdio.h>
 int main()
