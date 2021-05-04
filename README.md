@@ -527,7 +527,7 @@ int main()
 	printf("%.4f\n",100*ans/(float)N);
 }
 ```
-##week10 hardwood species
+## week10 hardwood species
 ```c
 #include <stdio.h>
 #include <string.h>
