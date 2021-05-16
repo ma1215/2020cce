@@ -481,7 +481,7 @@ int main ()
 	printf("The total is: %d",ans);
 }
 ```
-## week07字串排序-快速排序
+## week07-5 字串排序-快速排序
 ```c
 #include <stdio.h>
 #include <string.h>
