@@ -637,9 +637,21 @@ int main ()
 	printf("%d\n",ans);
 }
 ```
-## 
-
+## week12 數字個數
+連續讀入正整數(輸入0表示結束，至多不超過10個正整數)，之後顯示所輸入正整數的
 ```c
+#include <stdio.h>
+int a[10];
+int main ()
+{
+	int ans=0;
+	for(int i=0;i<10;i++){
+	scanf("%d",&a[i]);
+	if(a[i]==0) break;
+	ans++;
+	}
+	printf("%d",ans);
+}
 ```
 ## 
 
