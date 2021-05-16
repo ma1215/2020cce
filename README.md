@@ -320,109 +320,168 @@ int main ()
 	else printf("O");
 }
 ```
-## week05-1
+## week05-1 反序數字
+輸入1個正整數，將該整數所有數字反序排列後組成一個的新整數，計算出兩者相加的結果
 ```c
 #include <stdio.h>
+int f (int n)
+{
+	int p;
+	int m=0;
+	while(n>0)
+	{
+		p=n%10;
+		n=n/10;
+		m=p+m*10;
+	}
+		return m;	
+}
 int main ()
 {
-
-    char line [10]="decline";
-    char line2[10]={'p','r','o','p','e','r','\0'};
-    
-    printf("%s\n",line);
-    printf("%s\n",line2);
-
+	int n,m;
+	scanf("%d",&n);
+	printf("%d+%d=%d\n",n,f(m),n+f(m));
+}	
 }
 ```
-## week05-2
+## week05-2 N數之和 
+輸入一個整數N，之後讀入N個整數，請輸出其和。 
+數字範圍：N=整數1 – 10，其餘整數1 – 100
 ```c
 #include <stdio.h>
-int main ()
-{
-
-    char line [10]="decline";
-    char line2[10]={'p','r','o','p','e','r','\0'};
-
-    printf("%s\n",line);
-    printf("%s\n",line2);
-    char line3[]="majority";
-    printf("%s\n",line3);
-    char line4[]={'m','a','j','r','i','t','y'};
-    printf("你看看你看看,現在印出來的line4: ==%s==\n",line4);
-}
-```
-## week05-3
-
-```c
-#include <stdio.h>
-int main ()
-{
-
-  char line [5][10]={"decline","proper","majority","bullet","shop"};
-  for(int i=0;i<5;i++){
-    printf("%s\n",line[i]);
-  }
-}
-
-```
-## week05-4
-
-```c
-#include <stdio.h>
-int main ()
-{
-    printf("請看看值是多少: %d", '\0' );
-}
-
-```
-## week05-5
-
-```c
-#include <stdio.h>
-#include <string.h>
-int main ()
-{
-  char line[10]= "majority";
-  char line2[10]="ask";
-  if(strcmp(line ,line2)>0) {
-    printf("左邊大\n");
-  }else{
-    printf("右邊大\n");
-  }
-
-}
-
-```
-## week05-6
-
-```c
-#include <stdio.h>
-#include <string.h>
-char line[100][10];
+int a[100];
 int main ()
 {
 	int n;
 	scanf("%d",&n);
+	int ans=0;
 	for(int i=0;i<n;i++){
-		scanf("%s",line[i]);
+	scanf("%d",&a[i]);
+	ans+=a[i];
 	}
-	char temp[10];
-	for(int i=0;i<n;i++){
-		for(int j=i+1;j<n;j++){
-			if(strcmp (line[i],line[j])>0){
-	   		   strcpy (temp,line[i]);
-	   		   strcpy (line[i],line[j]);
-	   		   strcpy (line[j],temp);
-	 	    }
-	    }
+	printf("%d\n",ans);
+}
+```
+## week05-3 三數極大
+輸入三個正整數，輸出其最大值。 
+數字範圍：整數1 – 100 
+```c
+#include <stdio.h>
+int main ()
+{
+	int a,b,c;
+	scanf("%d%d%d",&a,&b,&c);
+	if(a>b&&a>c){
+		printf("%d\n",a);
 	}
-	for(int i=0;i<n;i++){
-		printf("%s\n",line[i]);
-	} 
-}	  
+	else if(b>a&&b>c){
+		printf("%d\n",b);
+	}
+	else if(c>a&&c>b){
+		printf("%d\n",c);
+	}
+	
+}
+```
+## week05-4 計算商數
+輸入兩個整數a，b，輸出a除以b的商。 
+數字範圍：整數 1 – 10000 
+```c
+#include <stdio.h>
+int main ()
+{
+	int a,b,c;
+	scanf("%d%d",&a,&b);
+	c=(a/b);
+	printf("%d\n",c);
+
+
+}
+```
+## week07-1 迴文判斷
+從鍵盤讀入1個4位數的整數(1000-9999)。如果該數字構成廻文(即由左而右，由右而左，順序相同)，則顯示YES。如果該數字未構成廻文，則顯示NO。
+```c
+#include <stdio.h>
+int main ()
+{
+	int a,a1,a2,a3,a4;
+	scanf("%d",&a);
+	a1=a%10;
+	a2=(a/10)%10;
+	a3=(a/100)%10;
+	a4=a/1000;
+	if(a1==a4&&a2==a3)printf("YES\n");
+	else printf("NO\n");
+}
+
+```
+## week07-2 函數反序排列數字
+設計一個函數f(n)，該函數可以傳回整數n的數字反序排列所組成的整數。 
+數字範圍：整數 1 – 9999 (不含10的倍數) 
+```c
+#include <stdio.h>
+int f(int n)
+{ 
+	int p;
+	int ans=0;
+	while(n>0)
+	{
+		p=n%10;	 
+		n=n/10;  
+		ans=ans*10+p; 
+	}
+	return ans;
+}
+int main ()
+{
+	int n;
+	scanf("%d",&n);
+	printf("%d\n",f(n));
+}
+```
+##  week07-3 陣列找出現次數
+讀入一個正整數的數列(逐一輸入正整數，輸入0表示結束，數列至多包含10個整數)，之後再讀入一個正整數，程式可以找出該整數出現在數列中的次數。 
+數字範圍：正整數 1 – 9 
+```c
+#include <stdio.h>
+int main ()
+{
+	int a[100];
+	int r=0;
+	for(int i=0;i<100;i++){
+	scanf("%d",&a[i]);
+	if(a[i]==0)break;
+	r++;
+	}
+	int n;
+	scanf("%d",&n);
+	int ans=0;
+	for(int i=0;i<r;i++){
+	if(a[i]==n)ans++;
+	}
+	printf("%d\n",ans);
+}
+```
+## week07-4 計算一列整數的總和
+請撰寫一個程式計算並印出數個整數的加總。假設以999當成警示值
+```c
+#include <stdio.h>
+int main ()
+{
+	printf("Enter an integer ( 999 to end ): \n");
+	int n;
+	scanf("%d",&n);
+	int ans=0;
+	while(n!=999)
+	{
+		ans=ans+n;
+		printf("Enter an integer ( 999 to end ): \n");
+		scanf("%d",&n);
+	}
+	printf("The total is: %d",ans);
+}
 ```
 ## week07字串排序-快速排序
-
 ```c
 #include <stdio.h>
 #include <string.h>
@@ -489,77 +548,7 @@ int main()
 	printf("%.4f\n",100*ans/(float)N);
 }
 ```
-## week10 hardwood species
-```c
-#include <stdio.h>
-#include <string.h>
-#include <stdlib.h>
-char line[1000];
-char tree[1000000][32];
-int compare(const void *p1,const void *p2)
-{
- return strcmp( (char*)p1,(char*)p2);
-}
-int main()
-{
- int T;
- scanf("%d\n\n",&T);
- for(int t=0;t<T;t++){
-  int N=0;
-  while(gets(line)!=NULL){
-   if(strcmp(line,"")==0)break;
-   
-   strcpy( tree[N],line);
-   //printf("%s\n",line);
-   N++;
-  }
-  //printf("有幾棵樹? %d\n",N);
-  
-  qsort(tree,N,32,compare);
-  
-  if(t>0) printf("\n");
-  int ans=1;
-  printf("%s ",tree[0]);
-  
-  for(int i=0;i<N-1;i++){
-   if( strcmp(tree[i],tree[i+1])==0){
-    ans++;
-   }else{
-    printf("%.4f\n",100*ans/(float)N);
-    ans=1;
-    printf("%s ",tree[i+1]);
-   }
-   //printf("%s\n",tree[i]);
-  }
-  printf("%.4f\n",100*ans/(float)N);
- }
-}
-
-```
-## week11-1
-
-```c
-#include <stdio.h>
-#include <stdlib.h>
-int a[10]={4,8,3,7,5,2,9,1,6,10};
-int compare(const void *p1,const void *p2)
-{
-    int d1= * (int *)p1;
-    int d2= * (int *)p2;
-    if( d1 > d2) return 1;
-    if( d1 == d2)return 0;
-    if( d1 < d2) return -1;
-}
-int main ()
-{
-    qsort(a,10,sizeof(int),compare);
-    for(int i=0; i<10 ;i++){
-        printf("%d ",a[i]);
-    }
-}
-
-```
-## list of conquests
+## week11 list of conquests
 
 ```c
 #include <stdlib.h>
@@ -599,7 +588,7 @@ int main ()
 	printf("%d\n",ans);
 }
 ```
-## week12 數字個數
+## week12-1 數字個數
 連續讀入正整數(輸入0表示結束，至多不超過10個正整數)，之後顯示所輸入正整數的
 ```c
 #include <stdio.h>
@@ -615,17 +604,31 @@ int main ()
 	printf("%d",ans);
 }
 ```
-## 
-
+## week12-2 剩餘啤酒有幾手又幾瓶
+假設購買啤酒瓶數有p瓶，喝掉d手（一手六瓶）後，試回答共剩幾手啤酒又幾瓶？
 ```c
+#include <stdio.h>
+int main ()
+{
+	int p,d,a,b;
+	scanf("%d%d",&p,&d);
+	a=(p/6)-d;
+	b=p%6;
+	printf("%d %d",a,b);
+}
 ```
-## 
-
+## week12-3 三數最小
+寫一方法能接受三個正整數，並回傳其最小值
 ```c
-```
-## 
-
-```c
+#include <stdio.h>
+int main ()
+{
+	int a,b,c;
+	scanf("%d%d%d",&a,&b,&c);
+	if(a<b&&a<c)printf("%d\n",a);
+	if(b<a&&b<c)printf("%d\n",b);
+	if(c<b&&c<a)printf("%d\n",c);
+}
 ```
 ## 
 
