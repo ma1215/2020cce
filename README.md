@@ -137,46 +137,9 @@ int main()
     printf("n[0]:%d,n[1]:%d,n[2]:%d",n[0],n[1],n[2]);
 }
 ```
-## week03
-```c
-#include <stdio.h>
-int a[5]={0,10,20,30,40};
-void printAll()
-{
-    for(int i=0;i<5;i++)printf("%d ",a[i]);
-    printf("\n");
-}
-int main ()
-{
-         printAll();
-     int *p = &a[2];
-     *p = 222;
-         printAll();
-         printf("p心理小紙條的值是:%d\n",p);
-     p = p + 2;
-     *p = 666;
-         printAll();
-         printf("p心理小紙條的值是:%d\n",p);
-     p--;
-     *p = 555;
-         printAll();
-         printf("p心理小紙條的值是:%d\n",p);
-}
-```
-## week03-1
-```c
-#include <stdio.h>
-#include <stdio.h>
-int a[10];
-int main()
-{
-    int b[10];
-    int *p=(int*)malloc(sizeof(int)*10);
-    return 0;
-
-}
-```
-## week03計算陣列平方值
+## week03-1 計算陣列平方值
+輸入一個整數N，再依序輸入N個整數置於陣列中，計算各元素的平方值，再列出此算出平方值後的陣列。 
+數字範圍：整數N範圍 1 – 10；其他整數1 – 100 
 ```c
 #include <stdio.h>
 int a[10];
@@ -194,7 +157,7 @@ int main ()
 	printf("\n");
 }
 ```
-## week03計程車費計算
+## week03-2計程車費計算
 ```c
 #include <stdio.h>
 int main ()
@@ -209,7 +172,8 @@ int main ()
 
 }
 ```
-## 基礎題：兩數間可被5整除的整數
+## week03-3 兩數間可被5整除的整數
+
 ```C
 #include <stdio.h>
 int main()
@@ -228,7 +192,9 @@ int main()
  }
 }
 ```
-## 基礎題：整數間最大距離
+## week03-4 整數間最大距離
+輸入3個相異整數，找出整數間最大的距離。 
+數字範圍：整數1 – 10000 
 ```C
 #include <stdio.h>
 int a[10000];
@@ -249,26 +215,8 @@ int main()
  printf("%d\n",max-min);
 }
 ```
-## 進階題：計算陣列的平方值
-```C
-#include <stdio.h>
-int a[10];
-int b[100];
-int main()
-{
- int n;
- scanf("%d",&n);
- int ans=1;
- for(int i=1;i<=n;i++)
- {
-  scanf("%d",&a[i]);
-  ans=a[i]*a[i];
-  printf("%d,",ans);
- }
- printf("\n");
-}
-```
-## 進階題：大小寫轉換
+## week03-5大小寫轉換
+讀入一個字串(至多10個字元)，將字串中的大小寫英文字母相互轉換(大寫轉為小寫，小寫轉為大寫)後輸出
 ```C
 #include <stdio.h>
 int main()
