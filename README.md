@@ -99,42 +99,45 @@ int main()
     printf("%d\n%d",a,b);
 }
 ```
-## week02-1
+## week02-1 讀入整數反序列印
+設計一個程式，該程式可以連續讀入正整數(輸入0表示結束，至多不超過10個正整數)，之後將所輸入的正整數以相反序顯示在畫面上。 
+數字範圍：整數 1 – 1000 
 ```c
 #include <stdio.h>
-int main()
+int main ()
 {
-    int n1=10,n2=20,n3=30;
-    printf("n1:%d n2:%d n3:%d\n",n1,n2,n3);
+	int  a[1000],n=0;
+ 	for(int i=0;i<=999;i++){
+	scanf("%d ",&a[i]);
+	if(a[i]==0){
+	n=i;
+	break;
+		}
+	}
+	for(int i=n-1;i>=0;i--){
+		printf("%d ",a[i]);
+		}
+	printf("\n");
+	
+	
 
-    int *p=&n1;
-    *p=200;
-    printf("n1:%d n2:%d n3:%d\n",n1,n2,n3);
-
-    int *p2=&n3;
-    *p2=300;
-    printf("n1:%d n2:%d n3:%d\n",n1,n2,n3);
 }
 ```
-## week02-2
+## week02-2 漸增數列相加 
+輸入正整數n，計算1*2+2*3+3*4+…+(n-1)*n之和。 
 ```c
 #include <stdio.h>
-int main()
+int main ()
 {
-    int n[3]={10,20,30};
-    printf("n[0]:%d n[1]:%d n[2]:%d\n",n[0],n[1],n[2]);
+	int ans=0,n;
+	scanf("%d",&n);
+	for(int i=1;i<=n-1;i++)
+	ans+=i*(i+1);
+	printf("%d\n",ans);
 
-    int *p=&n[0];
-    *p=200;
-    printf("n[0]:%d n[1]:%d n[2]:%d\n",n[0],n[1],n[2]);
 
-    int *p2=&n[2];
-    *p2=300;
-    printf("n[0]:%d n[1]:%d n[2]:%d\n",n[0],n[1],n[2]);
 
-    p2=p;
-    *p2=400;
-    printf("n[0]:%d,n[1]:%d,n[2]:%d",n[0],n[1],n[2]);
+
 }
 ```
 ## week03-1 計算陣列平方值
@@ -236,69 +239,85 @@ int main()
  printf("\n");
 }
 ```
-## week04-1 struct
-```c
-#include <stdio.h>+
-struct Point {
-    float x,y;
-};
-int main ()
-{
-    struct  Point a;
-}
-```
-## week04-2 
-```c
-#include <stdio.h>+
-struct Point {
-    float x,y;
-};
-int main ()
-{
-    struct  Point a={4.1, 3.2};
-    printf("%f %f\n", a.x, a.y);
-
-    return 0;
-}
-
-```
-## week04-3
-```c
-#include <stdio.h>+
-struct Point {
-    float x,y;
-};
-int main ()
-{
-    struct  Point a={4.1, 3.2};
-    printf("%f %f\n", a.x, a.y);
-
-    a.x=1;
-    a.y=2;
-    printf("%f %f\n",a.x,a.y);
-    return 0;
-}
-
-
-```
-## week 04-4
+## week04-1 除惡務盡 
+輸入一個字串，將所有字元2去除後輸出
 ```c
 #include <stdio.h>
-struct DATA {
-    int x,y;
-}a[3];
-struct DATA b={100,200};
-
 int main ()
 {
-    for(int i=0;i<3;i++){
-    printf("a[%d]:%d %d\n", i , a[i].x, a[i].y);
-    }
-    printf("b:%d %d\n", b.x, b.y);
-    struct  DATA c;
-    printf("c=%d %d像亂碼\n", c.x, c.y);
-    c=b;
-    printf("c:%d %d\n", c.x, c.y);
+	char a[100];
+	scanf("%s",&a);
+	int i=0;
+	while( a[i]!='\0')
+	{
+		if(a[i]!='2') printf("%c",a[i]);
+		i++;
+	}
+	printf("\n");
+}
+```
+## week04-2 擲骰統計
+輸入一字串為擲骰的結果，統計1到6點出現的狀況
+```c
+#include <stdio.h>
+int main ()
+{
+	char n[100];
+	scanf("%s",&n);
+	int a=0;
+	int b=0;
+	int c=0;
+	int d=0;
+	int e=0;
+	int f=0;                     
+	for(int i=0;i<100;i++){    
+	if (n[i]=='1') a++;		 	
+	if (n[i]=='2') b++;		 	 
+	if (n[i]=='3') c++;			 
+	if (n[i]=='4') d++;			
+	if (n[i]=='5') e++;		    
+	if (n[i]=='6') f++;
+	if (n[i]=='\0') break;		 
+	printf("1:%d\n",a);
+	printf("2:%d\n",b);
+	printf("3:%d\n",c);
+	printf("4:%d\n",d);
+	printf("5:%d\n",e);
+	printf("6:%d\n",f);
+}
+
+```
+## week04-3 星星等腰三角 
+輸入1個正整數n，作為輸出星星三角的層數
+```c
+#include <stdio.h>
+int main ()
+{
+	int n;
+	scanf("%d",&n);
+	for(int i=1;i<=n;i++) 
+		for(int j=0;j<(n-i);j++)
+			printf(" ");
+		for(int j=0;j<(i*2-1);j++)
+			printf("*");
+		printf("\n");
+	}		
+
+}
+
+```
+## week 04-4 字元判別
+輸入一個字元，若其為大寫字母則輸出U，若其為小寫字母則輸出L，若其為數字則輸出D，若為其他則輸出O
+```c
+#include <stdio.h>
+int main ()
+{
+	char n;
+	scanf("%c",&n);
+	if(n>='A'&&n<='Z')printf("U");
+	else if(n>='a'&&n<='z')printf("L");
+	else if(n>='1'&&n<='9')printf("D");
+	else printf("O");
 }
 ```
 ## week04-5
